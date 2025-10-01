@@ -1,0 +1,14 @@
+requests
+tqdm
+pandas
+pytz
+yt_dlp
+youtube-comment-downloader
+nrclex
+vaderSentiment
+matplotlib
+wordcloud
+openpyxl
+scikit-learn
+nltk
+textblob
