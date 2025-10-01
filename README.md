@@ -21,7 +21,7 @@ Récupérez les commentaires de **vidéos YouTube** spécifiques ou de **chaîne
 ```cmd
 run.bat --mode noapi --video https://www.youtube.com/watch?v=_pO7BRNdJdc&list=RD_pO7BRNdJdc&start_radio=1&ab_channel=JonPeck --max-comments 1000 --output-format csv 
 ```
-NE **JUGEZ** PAS LA VIDEO DE TEST SVP
+**VIDEO TEST** NE **JUGEZ** PAS LA VIDEO DE TEST SVP
 Génère le fichier `out/comments_pO7BRNdJdc.csv`.
 
 ### B) Mode sans API (chaîne entière)
@@ -46,7 +46,7 @@ run.bat --mode api --api-key TA-CLEF-KEY --channel-id UCgmvz6qxtga4W6n1mfmM0Zw -
 **l'oréal GLOBAL**
 
 run.bat --mode api --api-key TA-CLEF-KEY --channel-id UCoC8wK7Hbj1saQUBlFVaJkA --since 2025-01-05 --max-comments 1000
-run.bat --mode api --api-key TA-CLEF-KEY --channel-id UCjgOxNP15FxIYknHYgUBUMQ --since 2024-01-05 --max-comments 2000
+run.bat --mode api --api-key TA-CLEF-KEY --channel-id UCjgOxNP15FxIYknHYgUBUMQ --since 2024-01-01 --max-comments 2000
 **l'oréal PARIS USA**
 ```
 > Astuce : si vous ne disposez que d'un identifiant tel que « https://www.youtube.com/@somecreator », passez en **mode sans API** ou recherchez l'ID de la chaîne et réutilisez-le.
@@ -63,6 +63,7 @@ Les fichiers sont enregistrés dans le dossier « out/ ».
 - arguments a utiliser dans le CLI = translate.bat --help (For help in all arguments) / --target-lang (EN,FR,EN-GB,DE,ES) / --source-lang (Detection auto si aucun input) / --deepl-key CLEF-API
 ```
 translate.bat --inputs "out\comments__pO7BRNdJdc.csv" --target-lang FR
+translate.bat --inputs out\comments_*.csv --target-lang FR --only-missing --batch-size 1000 --formality default
 ```
 
 ## Analyse de l'output
