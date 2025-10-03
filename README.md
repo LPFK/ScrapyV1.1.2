@@ -59,7 +59,7 @@ Les fichiers sont enregistrés dans le dossier « out/ ».
 
 ## Traduction du CSV
 
-- set DEEPL_API_KEY=VOTRE_CLEF_API
+- set DEEPL_API_KEY=VOTRE_CLEF_API (Pour définir la clef API a utiliser pour la traduction avec DeepL)
 - arguments a utiliser dans le CLI = translate.bat --help (For help in all arguments) / --target-lang (EN,FR,EN-GB,DE,ES) / --source-lang (Detection auto si aucun input) / --deepl-key CLEF-API
 ```
 translate.bat --inputs "out\comments__pO7BRNdJdc.csv" --target-lang FR
@@ -67,6 +67,9 @@ translate.bat --inputs out\comments_*.csv --target-lang FR --only-missing --batc
 ```
 
 ## Analyse de l'output
+```analyze.bat --inputs out\*.csv --output-dir out\analysis --cluster-authors --auto-k --min-comments 2
+  analyze.bat --inputs out\*.csv --output-dir out\analysis
+```
 - `out/analysis/comments_labeled.csv` – chaque commentaire avec sa `primary_emotion` et `vader_compound`.
 - `out/analysis/summary_emotions.csv` –  répartition par émotion..
 - Graphique en PNG dans `out/analysis/`:
@@ -93,6 +96,7 @@ run.bat --mode noapi --video VIDEO_URL --max-comments 2000 --since 2025-01-01 --
 - Le **mode sans API** utilise des données web publiques et peut être plus lent ; il peut cesser de fonctionner si YouTube modifie sa structure.
 - Les grandes chaînes peuvent contenir de nombreuses vidéos ; envisagez d'utiliser `--max-videos` pour limiter
 - comment avoir un **channel id**, en utilisant google chrome, faite un clic droit "Afficher le code source de la page" et cherchez "ChannelId" vous devriez trouver une ligne qui comme par "UC" (ex : UCjgOxNP15FxIYknHYgUBUMQ [L'oreal paris France])
+- le tri des émotions laisse un minima a désiré selon moi et meriterais tres honnetement beaucoup plus de travail
 
 **made with <3 by 550LY**
 
